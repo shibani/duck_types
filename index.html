@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>DUCK TYPES</title>
+		<title>Duck Types</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -39,31 +39,332 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>DUCK TYPES</h1>
-					<h3>What is a Duck Type?</h3>
-					<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/rubber-duck-sm.png" alt="Rubber Duck">
+					<h1 style="color:#fff0b3;">DUCK TYPES</h1>
+					<p style="color:#ffcc00;">What is a Duck Type?</p>
+					<img width="300" height="300" data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/duckling.png" alt="Mallard Duck">
 				</section>
 
 				<section>
 					<section>
-						<h2>A DUCK TYPE is a technique that reduces costs</h2>
+						<h2 style="text-transform:none;"><span style="color:#00ffff;">A DUCK TYPE is a technique<br />
+								<span style="color:#00ccff;">that reduces costs</span>
+							</h2>
 					</section>
 					<section>
-						<h3>it does this by making a class<br />
-						open for extension and <br />closed for modification</h3>
+						<h3 style="color:#00ffff;text-transform:none;">It does this by keeping a class<br />
+							<span class="fragment" style="color:#00ccff;">open for extension and</span><br />
+							<span class="fragment" style="color:#0000ff;">closed for modification</span>
+						</p>
 					</section>
 					<section>
-						<h3>thereby conforming to <br /><span style="color:pink">the second principle</span> of SOLID,<br />
-						<span style="color:blue">the Open/Close principle</span></h3>
-						<br>
+						<h3 style="text-transform:none;"><span style="color:#00ffcc;">thereby conforming to</span><br />
+							<span style="color:#00c985;">the second principle of SOLID...</span><br /><br />
+							<span style="color:#00a352;">the Open/Close principle</span>
+						</h3>
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
+					<h5>
+						But let's look at a more<br />
+						concrete example of this
+					</h5>
+					<p style="margin-top:30px;">
+						On Jun 4, 2018, Techcrunch confirmed<br />
+						that Microsoft had bought GitHub for<br />
+						7.5 billion in Microsoft stock<br /><br />
 					</p>
+					<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/github.jpg" alt="github logo">
+				</section>
+				<section>
+						<p>There were mixed reactions from<br />
+						the developer community.<br /><br />
+						Some looked at the acquisition as inevitable<br />
+						while others saw it as a death knell.<br /><br />
+						To understand what the response was like,<br />
+						look no further than Twitter...<br /></p>
+				</section>
+
+				<section>
+					<img
+					data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/twitter-1.png" alt="spinner loading">
+				</section>
+
+				<section>
+						<p>And then there was Clippy...</p>
+				</section>
+
+				<section>
+					<img width="53%"
+					data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/merge-conflict.png" alt="merge conflict">
+				</section>
+
+				<section>
+					<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/fix-github.png" alt="msft will fix github">
+				</section>
+
+				<section>
+						<p>Meanwhile, GitLab’s CEO and co-founder<br />
+						announced that a mass migration had<br />
+						been going on for nearly a week.<br /><br />
+
+						The morning of June 4th saw over 13,000<br />
+						 projects being imported within a single hour,<br /><br />
+
+						adding to the nearly 50,000 projects that<br />
+						were imported within the previous 7 days.<br /><br />
+
+						<p style="font-size:16px;line-height:16px;text-align:left;">
+							Oberhaus, D. (2018, June 4). GitLab told Motherboard that the company gained 50,000 new projects in the lead up to Microsoft's announcement that it acquired Github [online] Available at: https://motherboard.vice.com/en_us/article/ywen8x/13000-projects-ditched-github-for-gitlab-monday-morning [Accessed 14 Jun. 2018]
+						</p>
+				</section>
+
+				<section>
+						<p>By the end of Tuesday, the<br />
+						number had grown to 98,300</p>
+
+						<p>While this didn't make much of a dent<br />
+						in the 67 million repos on GitHub, it delivered <br />
+						a sudden growth opportunity for GitLab.</p>
+
+						<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/gitlab.png" alt="gitlab">
+				</section>
+
+				<section>
+						<p>So how does this relate to Duck Typing?<br /><br />
+
+						Let's say we have an application that helps companies<br />
+						get set up for version control, among other things.<br /><br />
+
+						We want our application to expose a method<br />
+						that sets us up with the required repository.<br /><br />
+
+						Something along the lines of<br />
+						Company.set_up_repo</p>
+
+				</section>
+				<section>
+					  <p>Our most basic quick and dirty implementation<br />
+						might possibly start out looking a little like this.</p><br />
+
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+						class Company
+						 def set_up_repository
+						  sign_up_for_github_repo
+						 end
+						end
+						</code></pre>
+				</section>
+
+				<section>
+						<p>Then along comes the Microsoft acquisition<br />
+						of GitHub and our application's needs change.</p><br />
+
+						<p>We would suddenly like to offer options.</p>
+				</section>
+
+				<section>
+						<h5>Type-checking</h5>
+						<p>In a procedural, non-SOLID world, we<br />
+						might refactor our code to pass in the<br />
+						particular service we wanted.<br /><br />
+
+						Our function would then possibly do some<br />
+						type-checking and call the appropriate set up<br />
+						function depending on the service we passed in.<br /><br />
+				</section>
+
+				<section>
+					<!-- #14 -->
+					<section>
+						<p>Resulting in an unwieldy conditional where<br />
+						our Company class knows about the types of<br />
+						services it receives, creating
+						dependencies.</p><br />
+					</section>
+					<section>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+						class Company
+						 def set_up_repository(service)
+						  if service == "github"
+						   sign_up_for_github_repo
+						  elsif service == "gitlab"
+						   sign_up_for_gitlab_repo
+						  elsif service == "bitbucket"
+						   sign_up_for_bitbucket_repo
+						  elsif service == "sourceforge"
+						   sign_up_for_sourceforge_repo
+						  end
+						 end
+						end
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							class Company
+							 def set_up_repository(service)
+							  if service.kind_of?(GitHub)
+							   sign_up_for_github_repo
+							  elsif service.kind_of?(GitLab)
+							   sign_up_for_gitlab_repo
+							  elsif service.kind_of?(BitBucket)
+							   sign_up_for_bitbucket_repo
+							  elsif service.kind_of?(SourceForge)
+							   sign_up_for_sourceforge_repo
+							  end
+							 end
+							end
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<p>These methods create dependencies.<br /><br />
+
+					They require our conditional to know<br />
+					what type of service is being sent.<br /><br />
+
+					Also, what if we wanted to change or<br />
+					terminate our current repository service?<br /><br />
+
+					We'd have to build more type-checking<br />
+					conditionals to do so, creating duplication.</p>
+				</section>
+
+				<section>
+					<p>Finally, what if one of the services<br />
+					was discontinued?<br /><br />
+
+					We'd have to remove the specific type-check<br />
+					from each of the conditionals we'd set up,<br />
+					leaving a lot of room for typos and errors.</p>
+				</section>
+
+				<section data-background="https://s3.us-east-2.amazonaws.com/shibani-s3/duck.gif">
+					<h5 style="color:#00cccc;">Enter Duck Types</h5>
+					<p>On the other hand, by implementing duck<br />
+					types, we can leverage 'across class messages'<br />
+					to eliminate some of these dependencies.<br /><br />
+				</section>
+
+				<section>
+					<p>In the example that follows we'll see how<br />
+					creating a duck type moves our application<br />
+					from depending on objects<br />
+					to depending on messages.<br /><br />
+
+					Since multiple classes implement the same<br />
+					message, these messages are more stable.<p>
+				</section>
+
+				<section>
+					<p>These 'across-class' messages (or methods)<br />
+					allow our calling class to trust that the<br />
+					objects sent to it respond to the same messages.<br /><br />
+
+					It no longer needs to know what<br /> 
+					type of object it received.<br /><br />
+
+					In other words, 'if it walks like a duck and<br />
+					it quacks like a duck, it IS a duck'<p>
+				</section>
+
+				<section>
+				<!-- #20 -->
+					<section>
+						<h5>Implementing Some Ducks</h5>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							class Company
+							 def setup_repository(service)
+							  service.sign_up_for_version_control
+							 end
+							end
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							class GitHub
+							 def sign_up_for_version_control
+							  “new Git repo on GitHub”
+							 end
+							end
+
+							class GitLab
+							 def sign_up_for_version_control
+							  “new Git repo on GitLab"
+							 end
+							end
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							class Bitbucket
+							 def sign_up_for_version_control
+							  “new Git repo on Bitbucket”
+							 end
+							end
+
+							class SourceForge
+							 def sign_up_for_version_control
+							  “new Git repo on SourceForge”
+							 end
+							end
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							company_a = Company.new
+							github_object = GitHub.new
+							gitlab_object = GitLab.new
+							bitbucket_object = Bitbucket.new
+							sourceforge_object = SourceForge.new
+
+							company_a.set_up_repository(github_object)
+							company_a.set_up_repository(gitlab_object)
+							company_a.set_up_repository(bitbucket_object)
+							company_a.set_up_repository(sourceforge_object)
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+						<p>Now consider how easy it would be<br />
+						to introduce change.<br /><br />
+
+						For example, we could add a terminate<br />
+						message to every service with ease.<br /><br />
+
+						Or add a new message that would return<br />
+						the overall score of the service.<br /><br />
+
+						Or we might remove a service completely.</p>
+				</section>
+
+				<section>
+					<p>In this way, duck typing makes a class more flexible,<br />
+					keeping it open for extension<br />
+					and closed for modification.<br /><br />
+				</section>
+
+				<section>
+					<h5>Characteristics of duck types</h5>
+					Duck Types must take in the same inputs and return the same outputs
+				</section>
+
+				<section>
+					Duck types and inheritance are both<br />
+					versions of Polymorphism</p>
+				</section>
+
+				<section>
+					Duck types are best implemented in dynamically typed languages</p>
+				</section>
+
+				<section>
+					<!-- add a gif -->
 				</section>
 
 				<section>
@@ -84,11 +385,7 @@
 				</section>
 
 				<section>
-
-				</section>
-
-				<section>
-					<section id="fragments">
+					<section>
 						<h2>Fragments</h2>
 						<p>Hit the next arrow...</p>
 						<p class="fragment">... to step through ...</p>
@@ -123,24 +420,6 @@
 					</p>
 				</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
 
 				<section>
 					<section data-background="#dddddd">
