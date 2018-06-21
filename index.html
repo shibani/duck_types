@@ -51,38 +51,40 @@
 							</h2>
 					</section>
 					<section>
-						<h3 style="color:#00ffff;text-transform:none;">It does this by keeping a class<br />
+						<h3 style="color:#00ffff;text-transform:none;">It does this by making a class<br />
 							<span class="fragment" style="color:#00ccff;">open for extension and</span><br />
 							<span class="fragment" style="color:#0000ff;">closed for modification</span>
 						</p>
 					</section>
 					<section>
-						<h3 style="text-transform:none;"><span style="color:#00ffcc;">thereby conforming to</span><br />
-							<span style="color:#00c985;">the second principle of SOLID...</span><br /><br />
-							<span style="color:#00a352;">the Open/Close principle</span>
+						<h3 style="text-transform:none;"><span style="color:#00ffff;">thereby conforming to</span><br />
+							<span style="color:#00ccff;">the second principle of <span style="color:#00ccff;">SOLID</span>...</span><br /><br />
+							<span style="color:#0000ff;">the Open/Close principle</span>
 						</h3>
 					</section>
 				</section>
 
 				<section>
-					<h5>
-						But let's look at a more<br />
-						concrete example of this
+					<h5 style="color:#fff0b3;">
+						But let's see what this might<br />
+						look like with an example
 					</h5>
-					<p style="margin-top:30px;">
-						On Jun 4, 2018, Techcrunch confirmed<br />
+					<p style="margin-top:30px;color:#66ccff;">
+						On Jun 4, 2018, TechCrunch confirmed<br />
 						that Microsoft had bought GitHub for<br />
 						7.5 billion in Microsoft stock<br /><br />
 					</p>
 					<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/github.jpg" alt="github logo">
 				</section>
 				<section>
-						<p>There were mixed reactions from<br />
-						the developer community.<br /><br />
-						Some looked at the acquisition as inevitable<br />
-						while others saw it as a death knell.<br /><br />
-						To understand what the response was like,<br />
-						look no further than Twitter...<br /></p>
+						<h5 style="color:#fff0b3;">There were mixed reactions from<br />
+						the developer community.</h5><br />
+
+						<p><span style="color:#fff0b3;">Some looked at the acquisition as inevitable<br />
+						while others saw it as a death knell.</span><br /><br />
+
+						<span style="color:#fff0b3;">To understand what the response was like,<br />
+						look no further than Twitter...</span><br /></p>
 				</section>
 
 				<section>
@@ -91,7 +93,7 @@
 				</section>
 
 				<section>
-						<p>And then there was Clippy...</p>
+						<p style="color:#fff0b3;">And then there was Clippy...</p>
 				</section>
 
 				<section>
@@ -104,7 +106,7 @@
 				</section>
 
 				<section>
-						<p>Meanwhile, GitLab’s CEO and co-founder<br />
+						<p style="color:#ffa26d;">Meanwhile, GitLab’s CEO and co-founder<br />
 						announced that a mass migration had<br />
 						been going on for nearly a week.<br /><br />
 
@@ -112,60 +114,65 @@
 						 projects being imported within a single hour,<br /><br />
 
 						adding to the nearly 50,000 projects that<br />
-						were imported within the previous 7 days.<br /><br />
+						were imported within the previous 7 days.</p><br />
 
-						<p style="font-size:16px;line-height:16px;text-align:left;">
-							Oberhaus, D. (2018, June 4). GitLab told Motherboard that the company gained 50,000 new projects in the lead up to Microsoft's announcement that it acquired Github [online] Available at: https://motherboard.vice.com/en_us/article/ywen8x/13000-projects-ditched-github-for-gitlab-monday-morning [Accessed 14 Jun. 2018]
+						<p style="font-size:16px;line-height:16px;text-align:left;margin-left:13%;">
+							Oberhaus, D. (2018, June 4). GitLab told Motherboard that the company gained 50,000 new projects<br />in the lead up to Microsoft's announcement that it acquired Github [online] Available at: https://motherboard.vice.com/en_us/article/ywen8x/13000-projects-ditched-github-for-gitlab-monday-morning<br />
+							[Accessed 14 Jun. 2018]
 						</p>
 				</section>
 
 				<section>
-						<p>By the end of Tuesday, the<br />
+						<p style="color:#9999ff;">By the end of Tuesday, the<br />
 						number had grown to 98,300</p>
 
-						<p>While this didn't make much of a dent<br />
-						in the 67 million repos on GitHub, it delivered <br />
-						a sudden growth opportunity for GitLab.</p>
+						<p style="color:#9999ff;">While this didn't make much of a dent<br />
+						in the 67 million repos on GitHub,<br />
+						
+						quite a few chose to migrate over to GitLab.</p>
 
 						<img data-src="https://s3.us-east-2.amazonaws.com/shibani-s3/gitlab.png" alt="gitlab">
 				</section>
 
 				<section>
-						<p>So how does this relate to Duck Typing?<br /><br />
+						<h5>So how does this relate to Duck Typing?</h5>
 
-						Let's say we have an application that helps companies<br />
-						get set up for version control, among other things.<br /><br />
+						<p style="color:#fff0b3;">Let's say we have an application that helps<br />
+						companies get set up for version control,<br /> among other things.<br /><br />
 
 						We want our application to expose a method<br />
 						that sets us up with the required repository.<br /><br />
 
 						Something along the lines of<br />
 						Company.set_up_repo</p>
-
 				</section>
 				<section>
-					  <p>Our most basic quick and dirty implementation<br />
+					  <p style="color:#ffad91;">Our most basic quick and dirty implementation<br />
 						might possibly start out looking a little like this.</p><br />
 
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+						<br />
 						class Company
 						 def set_up_repository
-						  sign_up_for_github_repo
+						  "do some work here to sign up for a git repo"
 						 end
 						end
+						<br />
 						</code></pre>
 				</section>
 
 				<section>
-						<p>Then along comes the Microsoft acquisition<br />
+						<p style="color:#ffad91;">Then along comes the Microsoft acquisition<br />
 						of GitHub and our application's needs change.</p><br />
 
-						<p>We would suddenly like to offer options.</p>
+						<p class="fragment">We would now like to offer more options,<br />
+						and not be limited to just Github.
+						</p>
 				</section>
 
 				<section>
 						<h5>Type-checking</h5>
-						<p>In a procedural, non-SOLID world, we<br />
+						<p style="color:#ffad91;">In a procedural, non-SOLID world, we<br />
 						might refactor our code to pass in the<br />
 						particular service we wanted.<br /><br />
 
@@ -177,10 +184,11 @@
 				<section>
 					<!-- #14 -->
 					<section>
-						<p>Resulting in an unwieldy conditional where<br />
-						our Company class knows about the types of<br />
-						services it receives, creating
-						dependencies.</p><br />
+						<p style="color:#fff0b3;">
+							Resulting in an unwieldy conditional<br />
+						 	where our set_up_repo method needs to<br />
+						 	know about the types of services it receives.
+						</p>
 					</section>
 					<section>
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
@@ -200,6 +208,7 @@
 						</code></pre>
 					</section>
 					<section>
+						<h5>OR</h5>
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
 							class Company
 							 def set_up_repository(service)
@@ -219,21 +228,21 @@
 				</section>
 
 				<section>
-					<p>These methods create dependencies.<br /><br />
+					<h5 style="color:#cc9393;">These methods create dependencies</h5>
 
-					They require our conditional to know<br />
+					<p>They require our conditional to know<br />
 					what type of service is being sent.<br /><br />
 
 					Also, what if we wanted to change or<br />
 					terminate our current repository service?<br /><br />
 
 					We'd have to build more type-checking<br />
-					conditionals to do so, creating duplication.</p>
+					conditionals to do so, risking creating<br /> duplication and/or dependencies.</p>
 				</section>
 
 				<section>
-					<p>Finally, what if one of the services<br />
-					was discontinued?<br /><br />
+					<h5 style="color:#cc9393;">Finally, what if one of the services<br />
+					was discontinued?</h5>
 
 					We'd have to remove the specific type-check<br />
 					from each of the conditionals we'd set up,<br />
@@ -248,42 +257,45 @@
 				</section>
 
 				<section>
-					<p>In the example that follows we'll see how<br />
+					<p style="color:#0d6eff;">In the example that follows we'll see how<br />
 					creating a duck type moves our application<br />
 					from depending on objects<br />
 					to depending on messages.<br /><br />
 
-					Since multiple classes implement the same<br />
-					message, these messages are more stable.<p>
+					<span style="color:#66ccff;" class="fragment">Since multiple classes implement the same<br />
+					message, these messages are more stable.</span><p>
 				</section>
 
 				<section>
-					<p>These 'across-class' messages (or methods)<br />
+					<p style="color:#0d6eff;">These 'across-class' messages (or methods)<br />
 					allow our calling class to trust that the<br />
 					objects sent to it respond to the same messages.<br /><br />
 
 					It no longer needs to know what<br /> 
-					type of object it received.<br /><br />
+					type of object it received.</span><br /><br />
 
-					In other words, 'if it walks like a duck and<br />
-					it quacks like a duck, it IS a duck'<p>
+					<span style="color:#66ccff;">In other words, 'if it walks like a duck and<br />
+					it quacks like a duck, it IS a duck'</span><p>
 				</section>
 
 				<section>
 				<!-- #20 -->
 					<section>
-						<h5>Implementing Some Ducks</h5>
+						<h5 style="color:#ffad91;">Implementing Some Ducks</h5>
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							<br />
 							class Company
 							 def setup_repository(service)
 							  service.sign_up_for_version_control
 							 end
 							end
+							<br />
 						</code></pre>
 					</section>
 
 					<section>
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							<br />
 							class GitHub
 							 def sign_up_for_version_control
 							  “new Git repo on GitHub”
@@ -295,11 +307,13 @@
 							  “new Git repo on GitLab"
 							 end
 							end
+							<br />
 						</code></pre>
 					</section>
 
 					<section>
 						<pre><code class="hljs lang-ruby" data-trim data-noescape>
+							<br />
 							class Bitbucket
 							 def sign_up_for_version_control
 							  “new Git repo on Bitbucket”
@@ -311,6 +325,7 @@
 							  “new Git repo on SourceForge”
 							 end
 							end
+							<br />
 						</code></pre>
 					</section>
 
@@ -331,19 +346,19 @@
 				</section>
 
 				<section>
-						<p>Now consider how easy it would be<br />
-						to introduce change.<br /><br />
+						<h5 style="color:#66ccff">Now consider how easy it would<br />
+						be to introduce change</h5>
 
-						For example, we could add a terminate<br />
+						<p>For example, we could add a terminate<br />
 						message to every service with ease.<br /><br />
 
-						Or add a new message that would return<br />
-						the overall score of the service.<br /><br />
+						Or add a new message that would<br />
+						return the overall score of the service.<br /><br />
 
 						Or we might remove a service completely.</p>
 				</section>
 
-				<section>
+				<section style="color:#0d6eff">
 					<p>In this way, duck typing makes a class more flexible,<br />
 					keeping it open for extension<br />
 					and closed for modification.<br /><br />
@@ -351,273 +366,60 @@
 
 				<section>
 					<h5>Characteristics of duck types</h5>
-					Duck Types must take in the same inputs and return the same outputs
+					<p>To work as expected, duck types<br /> 
+					must take in the same inputs and<br />  
+					return the same outputs</p><br /> 
 				</section>
 
 				<section>
+					<h5>This is important because it adds<br />
+					to the stability of our messages.</h5>
+					It also eliminates complexity that<br /> 
+					would be created if our messages <br />
+					returned different results that required<br /> 
+					further checking in the future.</p><br /> 
+				</section>
+
+				<section>
+					<h3>Polymorphism</h3>
+					<p>Polymorphism is the ability of multiple<br /> 
+					objects to respond to the same message.<br /><br />
+					Senders of the message need not care<br /> 
+					about the class of the receiver.<br /><br />
+					A single message thus has many(poly) forms(morphs)<br /><br />
 					Duck types and inheritance are both<br />
-					versions of Polymorphism</p>
+					types of Polymorphism</p>
 				</section>
 
 				<section>
-					Duck types are best implemented in dynamically typed languages</p>
+					<h5>Duck types are best implemented<br />
+					in dynamically typed languages</h5>
+					
+					<p>Unlike dynamically-typed languages, <br />
+					most (though not all) statically-typed <br />
+					languages require that you declare the <br />
+					type of each variable and every<br />
+					method parameter.</p>
+				</section>
+
+				<section>
+					<p>Ruby's Dynamic typing is in fact the very<br />
+					feature that paves the way for duck-typing.</p>
+					
+					<p>If we knew the class of the object we were<br /> 
+					sending a message to, we would not need to send<br /> 
+					an ‘across class’ message.</p>
+				</section>
+
+				<section>
+					<p>On the other hand, searching to create across<br />
+					class messages helps us reveal stable abstractions,<br />
+					and areas where our code can be safely and easily<br /> extended in the future.</p>
 				</section>
 
 				<section>
 					<!-- add a gif -->
 				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section>
-					<section>
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
 
 		</div>
