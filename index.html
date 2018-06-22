@@ -368,38 +368,51 @@
 				<section>
 					<h5>Characteristics of duck types</h5>
 
-					<p>To work as expected, duck types<br /> 
-					must take in the same inputs and<br />  
-					return the same outputs</p><br /> 
-
+					<p>To work as expected, duck types must:<br /> 
+					<p class="fragment">take in the same types inputs and</p>  
+					<p class="fragment">return the same types of outputs</p>
 				</section>
 
 				<section>
-					<h5>This is important because it adds<br />
-					to the stability of our messages.</h5>
+					<h5>This adds to the stability<br />
+					of our messages</h5>
 
-					It also eliminates complexity that<br /> 
-					would be created if our messages <br />
-					returned different results that required<br /> 
+					It also eliminates complexity<br /> 
+					and associated costs that would<br/>
+					be created if our messages returned<br />
+					different results that required<br /> 
 					further checking in the future.</p><br /> 
+				</section>
+
+				<section>
+					<h5>Some related concepts</h5>
 				</section>
 
 				<section>
 					<h5 style="color:#66ccff;">Polymorphism</h5>
 					<p>Duck types and inheritance are<br />
 					both types of Polymorphism<br /><br />
-					<p>Polymorphism is the ability of multiple<br /> 
+
+					Polymorphism is the ability of multiple<br /> 
 					objects to respond to the same message.<br /><br />
-					Senders of the message need not care<br /> 
-					about the class of the receiver.<br /><br />
-					<span style="color:#0d6eff;">A single message thus has many(poly) forms(morphs)</span></p>
+
+					Senders of the message need not<br /> 
+					care about the class of the receiver.<br /><br />
 				</section>
 
 				<section>
-					<h5>Duck types are best implemented<br />
-					in dynamically typed languages</h5>
+					<h5 style="color:#0d6eff;">
+					A single message thus has<br />
+					many(poly) forms(morphs)</h5>
+				</section>
 
-					<p>Unlike dynamically-typed languages, <br />
+				<section>
+					<h5>Dynamic vs Static Typing</h5>
+
+					<p>Duck types are best implemented<br />
+					in dynamically typed languages<br /><br />
+
+					Unlike dynamically-typed languages, <br />
 					most (though not all) statically-typed <br />
 					languages require that you declare the <br />
 					type of each variable and every<br />
@@ -407,20 +420,22 @@
 				</section>
 
 				<section>
-
-					<h5>Ruby's Dynamic typing is in fact the very<br />
-					feature that paves the way for duck-typing.</h5>
-					
 					<p>If we knew the class of the object we were<br /> 
-					sending a message to, we would not need to send<br /> 
+					sending a message to, we would not need<br /> 
 
-					an ‘across class’ message.</p>
+					to send an ‘across class’ message.</p><br />
+
+					<p>This makes Ruby's dynamic<br />
+					typing the very feature that<br />
+					paves the way for duck-typing.</p>
 				</section>
 
 				<section>
-					<p>On the other hand, searching to create across<br />
-					class messages helps us reveal stable abstractions,<br />
-					and areas where our code can be safely and easily<br /> extended in the future.</p>
+					<p>In this way, searching to create<br />
+					across class messages helps us<br />
+					reveal stable abstractions, and<br />
+					areas where our code can be safely<br /> 
+					and easily extended in the future.</p>
 				</section>
 
 				<section>
