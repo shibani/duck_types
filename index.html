@@ -154,7 +154,7 @@
 						<br />
 						class Company
 						 def set_up_repository
-						  "do some work here to sign up for a git repo"
+						  'do some work here to sign up for a git repo'
 						 end
 						end
 						<br />
@@ -299,13 +299,13 @@
 							<br />
 							class GitHub
 							 def sign_up_for_version_control
-							  “new Git repo on GitHub”
+							  'new Git repo on GitHub'
 							 end
 							end
 
 							class GitLab
 							 def sign_up_for_version_control
-							  “new Git repo on GitLab"
+							  'new Git repo on GitLab'
 							 end
 							end
 							<br />
@@ -317,13 +317,13 @@
 							<br />
 							class Bitbucket
 							 def sign_up_for_version_control
-							  “new Git repo on Bitbucket”
+							  'new Git repo on Bitbucket'
 							 end
 							end
 
 							class SourceForge
 							 def sign_up_for_version_control
-							  “new Git repo on SourceForge”
+							  'new Git repo on SourceForge'
 							 end
 							end
 							<br />
@@ -338,9 +338,12 @@
 							bitbucket_object = Bitbucket.new
 							sourceforge_object = SourceForge.new
 
-							company_a.set_up_repository(github_object)
-							company_a.set_up_repository(gitlab_object)
-							company_a.set_up_repository(bitbucket_object)
+							company_a.set_up_repository(github_object) OR
+
+							company_a.set_up_repository(gitlab_object) OR
+
+							company_a.set_up_repository(bitbucket_object) OR
+
 							company_a.set_up_repository(sourceforge_object)
 						</code></pre>
 					</section>
@@ -392,11 +395,11 @@
 
 				<section>
 					<h5 style="color:#66ccff;">Polymorphism</h5>
-					<p>Duck types and inheritance are<br />
-					both types of Polymorphism<br /><br />
-
 					Polymorphism is the ability of multiple<br /> 
 					objects to respond to the same message.<br /><br />
+					
+					<p>Duck types and inheritance are<br />
+					both types of Polymorphism<br /><br />
 
 					Senders of the message need not<br /> 
 					care about the class of the receiver.<br /><br />
